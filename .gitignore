@@ -7,7 +7,7 @@
 .vscode/
 
 # draw.io files
-diagrams/drawio_files
+diagrams/.drawio_files
 
 # Local configuration and secret environment variables
 *.local
