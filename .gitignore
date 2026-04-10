@@ -19,4 +19,5 @@ diagrams/.drawio_files
 # Temporary files
 *.swp
 *.bak
-*.tmp
+*.tmpsdkconfig.*
+*.code-workspace
