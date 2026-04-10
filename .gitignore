@@ -6,6 +6,9 @@
 # VS Code internal settings
 .vscode/
 
+# draw.io files
+diagrams/drawio_files
+
 # Local configuration and secret environment variables
 *.local
 .env
