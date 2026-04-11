@@ -63,10 +63,10 @@
 
 #pagebreak()
 = Project Overview 
-This project demonstrates a two-stage attack and detection scenario. In the first stage, a hardware keylogger intercepts keyboard input on a target machine and periodically exfiltrates the captured data to a remote server every 10 minutes. In the second stage, forensic analysis is conducted on the target system to reconstruct the attack timeline and identify evidence of the data exfiltration.
+This project demonstrates a two-phased attack and detection scenario. In the first phase, a hardware keylogger intercepts keyboard input on a target machine and periodically exfiltrates the captured data to a remote server every 10 minutes. In the second stage, forensic analysis is conducted on the target system to reconstruct the attack timeline and identify evidence of the data exfiltration.
 
 == Motivation & Learning Objectives
-The primary objective of this project is to explore and understand the technical lifecycle of credential exfiltration. By developing and analyzing the kbkey tool, I aim to address the following questions:
+The primary objective of this project is to explore and understand the technical lifecycle of credential exfiltration. By developing and analyzing the tool, I aim to address the following questions:
 + Technical Implementation
  - *Input Hooking:* Understanding the architectural differences in how various Operating Systems process keyboard interrupts.
  - *Stealth:* Developing methods to capture inputs without disrupting the user experience or triggering system alerts.
@@ -90,9 +90,9 @@ _ The goal of this project is exclusively to educate myself on this topic and le
 #pagebreak()
 = Phase A: Keylogger Development
 == Hardware
-I will be using a WaveShare ESP32-S3 Mini Microcontroller, which will connect to the target machine via USB-C port. 
+I am using a WaveShare ESP32-S3 Mini Microcontroller, which will connect to the target machine via USB-C port. The keylogger is going to be uploaded to this device and monitor the keypoard inputs on the target machine. 
 #figure(
-  image("images/microcontroller.png", width:100%),
+  image("images/microcontroller.png" , width:70%),
   caption:[The WaveShare ESP32-S3 Mini and its built-in USB-C Port]
 )
 
