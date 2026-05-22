@@ -64,7 +64,7 @@
 #pagebreak()
 = Project Overview 
 This project demonstrates a two-phased attack and detection scenario. In the first phase, a hardware keylogger intercepts keyboard input on a target machine and periodically exfiltrates the captured data to a remote server every 10 minutes. In the second stage, forensic analysis is conducted on the target system to reconstruct the attack timeline and identify evidence of the data exfiltration.
-YAML TEST
+
 == Motivation & Learning Objectives
 The primary objective of this project is to explore and understand the technical lifecycle of credential exfiltration. By developing and analyzing the tool, I aim to address the following questions:
 + Technical Implementation
