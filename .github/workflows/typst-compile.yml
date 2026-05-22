@@ -1,0 +1,51 @@
+name: Compile Typst Document
+
+on:
+  push:                    
+    branches: [ "main" ]   
+    paths:                
+      - 'docs/writeup.typ'    
+  workflow_dispatch:
+    inputs:
+      notify:
+        description: 'Send notification'
+        required: false
+
+permissions:
+  contents: write          
+
+jobs:
+  build:                   
+    runs-on: ubuntu-latest 
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: Setup Typst
+        uses: typst-community/setup-typst@v4
+        with:
+          typst-version: latest    
+   
+      - name: Compile writeup.typ
+        run: typst compile docs/writeup.typ kb-keylogger-writeup.pdf
+        
+      - name: List files (debugging)
+        run: ls -la *.pdf
+        
+      - name: Debug git status
+        run: |
+          git status
+          git branch
+          git remote -v
+        
+      - name: Commit and push PDF
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          
+          git add kb-keylogger-writeup.pdf
+          
+          git diff --staged --quiet || git commit -m "Auto-compile Typst writeup [skip ci]"
+          
+          git push

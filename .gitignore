@@ -4,6 +4,10 @@
 .piolibdeps
 /include
 
+# Workflows
+*.typst
+!kb-keylogger-writeup.pdf
+
 # VS Code internal settings
 .vscode/
 
@@ -19,7 +23,6 @@
 *.bak
 *.tmpsdkconfig.*
 *.code-workspace
-
 # ESP-IDF
 sdkconfig
 sdkconfig.*
